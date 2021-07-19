@@ -1,4 +1,18 @@
 const carouselSliderWrap = ()=>{
+  const overlay  = document.querySelector('.modal-overlay'),
+        callbackModal = document.getElementById('callback');
+  const wrap = document.querySelector('.services-carousel');
+  wrap.addEventListener('click',(event)=>{
+    event.preventDefault();
+    let target = event.target;
+    
+    if(target.matches('.fancyboxModal')){
+     overlay.style.cssText = 'display:block;';
+callbackModal.style.cssText = 'display:block;';
+    }else{
+      return;
+    }
+  });
 const carouselSlider = (slidesToshow = 3)=>{
   const main = document.querySelector('.services-elements'),
         wrap = document.querySelector('.services-carousel'),
